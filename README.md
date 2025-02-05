@@ -7,3 +7,7 @@ Este repositório serve como um registro do meu aprendizado e evolução na prog
 - 📖 Melhorar minhas habilidades resolvendo desafios diversos.  
 - ⚡ Explorar diferentes abordagens para resolver problemas.  
 - 📝 Criar um portfólio para compartilhar com recrutadores e outros desenvolvedores.  
+
+## Versão
+
+Nos testes estou utilizando a mesma versão utilizada no site CodeWars que é 3.11
