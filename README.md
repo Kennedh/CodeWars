@@ -2,7 +2,7 @@
 
 Bem-vindo ao meu repositório de soluções para desafios do **Codewars**! Aqui, compartilho minhas soluções para diferentes katas.  
 
-- Rank Atual:
+- Rank Atual e você consegue ir no meu perfil no link abaixo:
 
 [![Rank Atual](https://www.codewars.com/users/Kennedh/badges/large)](https://www.codewars.com/users/Kennedh)
 
