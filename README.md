@@ -4,7 +4,7 @@ Bem-vindo ao meu repositório de soluções para desafios do **Codewars**! Aqui,
 
 - Rank Atual:
 
-[Minha Badge](https://www.codewars.com/users/Kennedh/badges/large)
+(https://www.codewars.com/users/Kennedh/badges/large)
 
 ## 📌 Sobre o repositório
 Este repositório serve como um registro do meu aprendizado e evolução na programação. Meu objetivo é:  
