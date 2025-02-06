@@ -3,6 +3,7 @@
 Bem-vindo ao meu repositório de soluções para desafios do **Codewars**! Aqui, compartilho minhas soluções para diferentes katas.  
 
 - Rank Atual:
+
 [Minha Badge](https://www.codewars.com/users/Kennedh/badges/large)
 
 ## 📌 Sobre o repositório
