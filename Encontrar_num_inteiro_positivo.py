@@ -11,7 +11,7 @@ Em outras palavras, escrevendo os dígitos consecutivos de ncomo a, b, c, d ...,
 
 Se for o caso retornaremos k, se não retornaremos -1.
 
-Nota : ne psempre serão inteiros estritamente positivos.
+Nota : n e p sempre serão inteiros estritamente positivos.
 """
 #Esse codigo foi realmente dificil de fazer e entender mas vamos lá. Tentei explicar ele também conforme entendi
 
