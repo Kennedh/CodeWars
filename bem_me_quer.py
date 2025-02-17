@@ -19,6 +19,6 @@ def lovefunc( flower1, flower2 ):
 # Teste
 
 n1 = 3
-n2 = 5
+n2 =
 
 print(lovefunc(n1,n2))
