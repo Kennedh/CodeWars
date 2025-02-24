@@ -18,8 +18,13 @@ A string tem um comprimento maior ou igual a um e contém apenas letras de a a z
 """
 
 def printer_error(s):
-    pass
+    cont = 0
+    for error in s.lower():
+        if error not in "abcdefghijklm":
+            cont += 1
+    return f"{cont}/{len(s)}"
 
+# Teste
 
-palavra = "Kennedh"
-print(len(palavra))
+nome = "Kennedh"
+print(printer_error(nome))
