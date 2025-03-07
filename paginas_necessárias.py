@@ -5,3 +5,13 @@ Sua tarefa é calcular quantas páginas em branco você precisa. Se n < 0 ou m <
 """
 
 def paperwork(n, m):
+    r = n * m
+    if m < 0 or n < 0:
+        r = 0
+    return r
+
+# Test
+
+print(paperwork(2,5))
+print(paperwork(-2,5))
+print(paperwork(5,-5))
