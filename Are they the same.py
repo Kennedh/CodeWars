@@ -6,9 +6,9 @@ que verifica se os dois arrays têm os "mesmos" elementos, com as mesmas multipl
 """
 
 def comp(array1, array2):
-    array_master = []
-    for n in array1:
-        array_master.append(n*n)
+    if array1 is None or array2 is None:
+        return False
+    array_master = [n * n for n in array1]
     return sorted(array_master)==sorted(array2)
 
 # Teste
