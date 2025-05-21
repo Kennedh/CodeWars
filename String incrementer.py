@@ -8,24 +8,20 @@ from dataclasses import replace
 
 
 def increment_string(strng):
-    rev = strng[::-1]
-    num = ""
-    if rev[0].isdigit():
-        for idx, l in enumerate(rev):
-            if (l.isdigit() and idx == 0) or (l.isdigit() and l != "0"):
-                num += l
-            else:
-                break
-        num2 = int(num[::-1]) + 1
-        temp = strng.rsplit(str(num), 1)
-        res = f"{num2}".join(temp)
-        if "0" in strng and strng[-1] == 9:
-            res = res.replace("0","",1)
-            return res
+    if strng and strng[-1].isdigit():
+        i = len(strng) - 1
+        while i >= 0 and strng[i].isdigit():
+            i -= 1
+        prefix = strng[:i + 1]
+        num_part = strng[i + 1:]
+        incremented = str(int(num_part) + 1).zfill(len(num_part))
+        return prefix + incremented
+    elif not strng:
+        return "1"
     else:
         return strng + "1"
 
 # Teste
 
-print(increment_string("fo99obar99"))
+print(increment_string("sadsadas099"))
 
