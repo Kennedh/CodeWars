@@ -17,13 +17,15 @@ def increment_string(strng):
             else:
                 break
         num2 = int(num[::-1]) + 1
-        res = strng
-        res = res.replace(num[::-1], str(num2))
-        return res
+        temp = strng.rsplit(str(num), 1)
+        res = f"{num2}".join(temp)
+        if "0" in strng and strng[-1] == 9:
+            res = res.replace("0","",1)
+            return res
     else:
         return strng + "1"
 
 # Teste
 
-print(increment_string("foobar001"))
+print(increment_string("fo99obar99"))
 
