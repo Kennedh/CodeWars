@@ -20,3 +20,4 @@ def duplicate_count(text):
 # Teste
 
 print(duplicate_count("Indivisibilities"))
+print(duplicate_count("aaabdcghess"))
