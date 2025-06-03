@@ -5,8 +5,8 @@ Ex: [0, 0, 0, 1]é tratado como 0001que é a representação binária de 1.
 """
 
 def binary_array_to_number(arr):
-    return "".join(arr)
+    return int("".join(str(n) for n in arr), 2)
 
 # Teste
 
-print(binary_array_to_number([0, 0, 0, 1]))
+print(binary_array_to_number([1, 1, 1, 0]))
