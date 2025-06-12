@@ -11,10 +11,14 @@ sequências consecutivas: seguem uma após a outra sem interrupção
 
 def longest_consec(strarr, k):
     if k <= 0 or k > len(strarr):
-        return []
+        return ""
     else:
-        res = sorted(set(strarr), key=len, reverse=True)[0:k]
-        return "".join(res)
+        max_str = ""
+        for i in range(len(strarr) - k + 1):
+            concat = "".join(strarr[i:i + k])
+            if len(concat) > len(max_str):
+                max_str = concat
+        return max_str
 
 # teste
 
