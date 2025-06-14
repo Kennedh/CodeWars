@@ -19,6 +19,8 @@ ou uma matriz/lista vazia (Clojure/Racket/Prolog).
 """
 
 def stock_list(stocklist, categories):
+    if not stocklist or not categories:
+        return ""
     statu = {}
     for item in stocklist:
         parts = item.split()
@@ -26,17 +28,10 @@ def stock_list(stocklist, categories):
             continue
         code, quantity = parts[0], parts[1]
         letter = code[0]
-        if letter in statu:
-            statu[letter] += int(quantity)
-        else:
-            statu[letter] = int(quantity)
-    res = ""
-    for t in categories:
-        if res == "":
-            res += f"({t} : {statu.get(t, 0)})"
-        else:
-            res += f" - ({t} : {statu.get(t, 0)})"
-    return res
+        statu[letter] = statu.get(letter, 0) + int(quantity)
+
+    res_parts = [f"({t} : {statu.get(t, 0)})" for t in categories]
+    return " - ".join(res_parts)
 
 
 # Teste
