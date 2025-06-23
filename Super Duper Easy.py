@@ -4,7 +4,7 @@ Se o valor inserido for uma string, ela deverá retornar "Error".
 """
 
 def problem(a):
-    return (a * 50) + 6 if str(a).isdigit() else "Error"
+    return "Error" if isinstance(a,str) else a * 50 + 6
 
 # teste
 
