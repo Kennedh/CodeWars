@@ -7,3 +7,10 @@ Livre-se deles. Só dos que estão no fim.
 """
 
 def no_boring_zeros(n):
+    res = str(n)[-1::-1]
+    res = res.replace("-", "")
+    return int(str(int(res))[-1::-1]) if n > 0 else -int(str(int(res))[-1::-1])
+
+# Teste
+
+print(no_boring_zeros(6464400))
