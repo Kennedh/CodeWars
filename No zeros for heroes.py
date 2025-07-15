@@ -14,3 +14,5 @@ def no_boring_zeros(n):
 # Teste
 
 print(no_boring_zeros(6464400))
+print(no_boring_zeros(100))
+print(no_boring_zeros(400000))
