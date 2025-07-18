@@ -6,6 +6,9 @@ pontuação.
 def pig_it(text):
     res = ""
     for w in text.split():
+        if not w.isalpha():
+            res += " " + w
+            break
         if res == "":
             res += w[1:] + w[0] + "ay"
         else:
