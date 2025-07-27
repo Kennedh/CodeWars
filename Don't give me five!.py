@@ -6,7 +6,11 @@ exceto aqueles com 5. Os números inicial e final são inclusivos!
 
 def dont_give_me_five(start,end):
     res = 0
-    for n in range(start-1,9):
-        if n % 5 != 0:
+    for n in range(start,end + 1):
+        if "5" not in str(n):
             res += 1
     return res
+
+# Teste
+
+print(dont_give_me_five(1,9))
