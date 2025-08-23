@@ -11,4 +11,12 @@ Você pode encontrar alguns exemplos nos acessórios de teste.
 """
 
 def make_readable(seconds):
-    pass
+    h = seconds // 3600
+    r = seconds % 3600
+    m = r // 60
+    s = r % 60
+    return f"{h:02d}:{m:02d}:{s:02d}"
+
+# Teste
+
+print(make_readable(3599))
