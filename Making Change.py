@@ -12,5 +12,22 @@ ser incluídas no hash. Se o argumento passado for 0, o metodo deve retornar um 
 """
 
 def make_change(amount):
-    h = amount // 50
+    res = {}
+    res["H"] = amount // 50
     r = amount % 50
+    res["Q"] = r // 25
+    r = r % 25
+    res["D"] = r // 10
+    r = r % 10
+    res["N"] = r // 5
+    r = r % 5
+    res["P"] = r // 1
+    return {k: v for k, v in res.items() if v > 0}
+
+# Teste
+
+print(make_change(1))
+print(make_change(43))
+print(make_change(91))
+
+
