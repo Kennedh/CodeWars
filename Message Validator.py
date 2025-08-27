@@ -13,15 +13,25 @@ Cada número deve corresponder ao número de caracteres na substring a seguir, c
 por exemplo "hello5", e "2hi2"são inválidos
 Se a mensagem for uma string vazia, você deve retornartrue
 """
-import re
 
 def is_a_valid_message(msg):
-    parts = re.findall(r'\d+|[a-zA-Z]+', msg)
-    for i in range(0, len(parts), 2):
-        if i+1 >= len(parts):
+    i = 0
+
+    while i < len(msg):
+        if not msg[i].isdigit():
             return False
-        num = int(parts[i])
-        word = parts[i+1]
+
+        num = 0
+        while i < len(msg) and msg[i].isdigit():
+            num = num * 10 + int(msg[i])
+            i += 1
+
+        word = msg[i: i + num]
         if len(word) != num:
             return False
+        i += num
     return True
+
+# Teste
+
+print(is_a_valid_message("3hey5hello2hi"))
