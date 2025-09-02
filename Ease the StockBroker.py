@@ -46,5 +46,67 @@ Devido ao Codewars, as diferenças de espaço em branco nem sempre aparecerão n
 Com Golang (e talvez outros) você pode usar um formato com "%.0f" para "Comprar" e "Vender".
 """
 
+
 def balance_statement(lst):
-    pass
+    if not lst:
+        return "Buy: 0 Sell: 0"
+    bad_orders = []
+    sell = 0.0
+    buy = 0.0
+
+    for order in lst.split(","):
+        order = order.strip()
+        parts = order.split()
+
+        try:
+            quote = parts[0]
+
+            if "." in parts[1]:
+                raise ValueError("Quantidade não pode ter ponto decimal")
+            quantity = int(parts[1])
+
+            if "." not in parts[2]:
+                raise ValueError("Preço precisa ter ponto decimal")
+            price = float(parts[2])
+
+            status = parts[3].upper()
+
+            if status == "B":
+                buy += quantity * price
+            elif status == "S":
+                sell += quantity * price
+            else:
+                bad_orders.append(order)
+
+        except (IndexError, ValueError):
+            bad_orders.append(order)
+
+    if not bad_orders:
+        return f"Buy: {buy:.0f} Sell: {sell:.0f}"
+    else:
+        bf = f"Badly formed {len(bad_orders)}: "
+        bf += " ;".join(bad_orders) + " ;"
+        return f"Buy: {buy:.0f} Sell: {sell:.0f}; {bf}"
+
+
+# Teste
+
+print(balance_statement("ZNGA 1300 2.66 B, CLH15.NYM 50 56.32 B, OWW 1000 11.623 B, OGG 20 580.1 B"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
