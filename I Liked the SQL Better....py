@@ -26,7 +26,7 @@ conn = sqlite3.connect('/tmp/movies.db')
 cursor = conn.cursor()
 
 cursor.execute("""CREATE TABLE IF NOT EXISTS MOVIES (
-              id INTEGER PIMARY KEY,
+              id INTEGER PRIMARY KEY,
               name TEXT NOT NULL,
               year INTEGER NOT NULL,
               rating INTEGER NOT NULL) """)
@@ -41,3 +41,5 @@ mv = [
 ]
 
 cursor.executemany("INSERT INTO MOVIES (name, year, rating) VALUES (?,?,?)", mv)
+
+conn.commit()
