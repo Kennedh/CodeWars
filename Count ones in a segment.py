@@ -23,3 +23,14 @@ def count_ones(left, right):
 
 print(count_ones(1,10000))
 
+"""Como o codewars tem limite de timeout (12000ms), e para iterar bilhões de segmentos, leva muito tempo. Eu vou precisar de
+ equação para tornar o código eficiente pois atualmente ele funciona mas para grandes volumes de números ele demora.
+
+ Equação vai consister em analisar um grande quantidade de números binarios e analisar um padrão entre eles"""
+
+# Testando algumas possibilidades
+
+# x é número de casas minimas binarias, usando exemplo de 0-7 são no maximo 3
+
+x = 3
+print(x * 2 ** (x - 1))
