@@ -14,5 +14,21 @@ More examples in the test cases. Good luck!
 """
 
 def solve(arr,n):
+    count = 0
+    marks = arr.copy()
     for idx, i in enumerate(arr):
         if i == "D":
+            ini = max(0, idx - n)
+            fim = min(len(arr) - 1, idx + n)
+            for j in range(ini, fim + 1):
+                if marks[j] == "C":
+                    count += 1
+                    marks[j] = "X"
+                    break
+    return count
+
+# Teste
+
+print(solve(['D','C','C','D','C'], 1))
+print(solve(['C','C','D','D','C','D'],2))
+print(solve(['C','C','D','D','C','D'],1))
