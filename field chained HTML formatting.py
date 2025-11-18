@@ -51,8 +51,19 @@ class Format:
         novas_tags = tags_atuais + [tag]
         return self.__class__(tags=novas_tags)
 
+    def __call__(self, *args):
+        res = "".join(args)
+        for t in self.tags[::-1]:
+            res = f"<{t}>" + res + f"</{t}>"
+        return res
+
 format = Format()
 
 nova_div = format.div.h1
 
-print(nova_div.tags)
+print(format.div.h1.h2("Olá Mundo", " Bagual"))
+
+print(format.div(
+    format.h1("Title"),
+    format.p(f"Paragraph with a {format.span('span')}.")
+))
