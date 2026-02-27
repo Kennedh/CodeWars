@@ -15,9 +15,20 @@ Input >> Output Examples
 
 3- Add (-14,-16) ==> return (-30)
 
+
+
 */
 
 function add(a, b) {
 
+  while (b !== 0) {
+    let carry = a & b;
+    a = a ^ b;
+    b = carry << 1;
+  }
   return a;
 }
+
+// Teste
+
+console.log(add(7,3))
