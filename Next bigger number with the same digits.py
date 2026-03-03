@@ -17,14 +17,18 @@ def next_bigger(n):
     temp = []
     for i in range(len(n) - 2, -1, -1):
         if n[i] < n[i + 1]:
-            n[i], n[i + 1] = n[i + 1], n[i]
-            if len(n[i + 1:]) > 0:
-                temp = n[i + 1:]
-                del n[i + 1:]
-                n.insert(-1,sorted(temp))
-                return n
+            for j in range(len(n) - 1, i, -1):
+                if n[j] > n[i]:
+                    n[i], n[j] = n[j], n[i]
+                    n[i + 1:] = sorted(n[i + 1:])
+                    return int("".join(n))
     return -1
 
 # Teste
 
 print(next_bigger(12))
+print(next_bigger(21))
+print(next_bigger(513))
+print(next_bigger(2017))
+print(next_bigger(414))
+print(next_bigger(144))
