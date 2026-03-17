@@ -18,16 +18,14 @@ Note: In the C and NASM languages you are given the third parameter which is the
 """
 
 def data_reverse(data):
-    temp = []
-    res  = []
-    for n in range(7,len(data) + 1,8):
-        temp.insert(0,data[n - 7:n + 1])
-    for r in temp:
-        res.extend(r)
+    res = []
+    # Pega do último bloco para o primeiro
+    for i in range(len(data) - 8, -1, -8):
+        res.extend(data[i:i+8])
     return res
 
 # Teste
 
 print(data_reverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]))
 
-# resultado esperado [1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
+# Resultado        [1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
