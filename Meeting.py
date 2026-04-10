@@ -21,20 +21,8 @@ You can see another examples in the "Sample tests".
 """
 
 def meeting(s):
-    s = s.upper()
-    convidados = s.split(';')
-    convidados_separados = []
-
-    for convidado in convidados:
-        nome, sobrenome = convidado.split(':')
-        convidados_separados.append((nome, sobrenome))
-    convidados_ordenados = sorted(convidados_separados, key=lambda x: (x[1], x[0]))
-
-    res = ''
-    for nome, sobrenome in convidados_ordenados:
-        res += f'({sobrenome}, {nome})'
-    return res
-
+    return ''.join(sorted(f'({part.split(":")[1].upper()}, {part.split(":")[0].upper()})' 
+                          for part in s.upper().split(';')))
 # Teste
 
 print(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
