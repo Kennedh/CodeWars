@@ -7,18 +7,22 @@ array)
 
 def hungry_seven(arr):
     res = arr[:]
-    i = 0
-    while i < len(res) - 2:
-        if res[i] == 7 and res[i + 1] == 8 and res[i + 2] == 9:
-            res[i + 1], res[i + 2] = res[i + 2], res[i + 1]
-            i += 3
-        else:
-            i += 1
+    mudou = True
+    while mudou:
+        mudou = False
+        i = 0
+        while i < len(res) - 2:
+            if res[i] == 7 and res[i + 1] == 8 and res[i + 2] == 9:
+                res[i], res[i+1], res[i+2] = 8, 9, 7
+                mudou = True
+                i += 2
+            else:
+                i += 1
     return res
 
 # Teste
 
-print(hungry_seven([7,8,9]))
-print(hungry_seven([7,7,7,8,9]))
-print(hungry_seven([8,7,8,9,8,9,7,8]))
-print(hungry_seven([8,7,8,7,9,8]))
+print(hungry_seven([7,8,9]))           # [8, 9, 7]
+print(hungry_seven([7,7,7,8,9]))       # [8, 9, 7, 7, 7]
+print(hungry_seven([8,7,8,9,8,9,7,8])) # [8, 8, 9, 8, 9, 7, 7, 8]
+print(hungry_seven([8,7,8,7,9,8]))     # [8, 7, 8, 7, 9, 8]
