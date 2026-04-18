@@ -21,6 +21,7 @@ def circle_area(r):
     area = math.pi * r * r
     return round(area, 3)
 
+
 # Teste
 
 print(circle_area(43.2673))  # 5881.248
