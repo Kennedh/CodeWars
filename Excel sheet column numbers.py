@@ -12,12 +12,9 @@ Column title: "AA" --> return 27
 """
 
 
-def title_to_number(title):
-    result = 0
-    for char in title:
-        char_value = ord(char) - ord('A') + 1
-        result = result * 26 + char_value
-    return result
+def title_to_number(title: str) -> int:
+    return sum((ord(char) - ord('A') + 1) * (26 ** i) 
+               for i, char in enumerate(reversed(title)))
 
 # Teste
 
